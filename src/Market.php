@@ -61,7 +61,7 @@ class Market
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($request));
         $response = json_decode(curl_exec($curl), true);
 
-        if (!$response?->success || !$response?->succ)
+        if (!$response['success'] || !$response['succ'])
             throw new \Exception($response?->error ?? 'unknown error');
 
         curl_close($curl);
