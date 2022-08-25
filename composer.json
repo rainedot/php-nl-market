@@ -1,0 +1,22 @@
+{
+    "name": "rainedot/php-nl-market",
+    "description": "NeverLose Market API wrapper",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rainedot\\PhpNlMarket\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rainedot",
+            "email": "rainedot@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "ext-curl": "*"
+    }
+}
