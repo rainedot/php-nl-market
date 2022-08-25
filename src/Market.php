@@ -62,7 +62,7 @@ class Market
         $response = json_decode(curl_exec($curl), true);
 
         if (!$response['success'] || !$response['succ'])
-            throw new \Exception($response?->error ?? 'unknown error');
+            throw new \Exception($response['error'] ?? 'unknown error');
 
         curl_close($curl);
         return $response;
