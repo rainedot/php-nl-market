@@ -5,7 +5,7 @@ namespace Rainedot\PhpNlMarket;
 use Rainedot\PhpNlMarket\Enum\Counts;
 use Rainedot\PhpNlMarket\Enum\Products;
 
-class Market
+class MarketAPI
 {
 
     const BASE_URL = 'https://neverlose.cc/api/market/';
