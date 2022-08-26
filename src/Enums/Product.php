@@ -1,8 +1,8 @@
 <?php
 
-namespace Rainedot\PhpNlMarket\Enum;
+namespace Rainedot\PhpNlMarket\Enums;
 
-enum Products: string
+enum Product: string
 {
     case CSGO = 'csgo';
     case TF2 = 'tf2';

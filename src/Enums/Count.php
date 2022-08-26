@@ -1,8 +1,8 @@
 <?php
 
-namespace Rainedot\PhpNlMarket\Enum;
+namespace Rainedot\PhpNlMarket\Enums;
 
-enum Counts: int
+enum Count: int
 {
     case MONTHLY = 0;
     case QUARTERLY = 1;

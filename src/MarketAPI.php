@@ -2,8 +2,8 @@
 
 namespace Rainedot\PhpNlMarket;
 
-use Rainedot\PhpNlMarket\Enum\Counts;
-use Rainedot\PhpNlMarket\Enum\Products;
+use Rainedot\PhpNlMarket\Enums\Count;
+use Rainedot\PhpNlMarket\Enums\Product;
 
 class MarketAPI
 {
@@ -91,7 +91,7 @@ class MarketAPI
     /**
      * @throws \Exception
      */
-    public function getProductPrices(Products $product): array
+    public function getProductPrices(Product $product): array
     {
         $request = [
             'product' => $product->value,
@@ -102,7 +102,7 @@ class MarketAPI
     /**
      * @throws \Exception
      */
-    public function giftProduct(int $transaction_id, string $username, Products $product, Counts $count): void
+    public function giftProduct(int $transaction_id, string $username, Product $product, Count $count): void
     {
         $request = [
             'id' => $transaction_id,
