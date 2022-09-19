@@ -9,7 +9,7 @@ Comfortable NeverLose API wrapper for PHP.
 ## Composer
 
 ```bash
-composer require stripe/stripe-php
+composer require rainedot/php-nl-market
 ```
 
 ## Dependencies
