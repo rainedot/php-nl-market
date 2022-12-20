@@ -87,7 +87,7 @@ $api->transferBalance(1, 'USERNAME', 1);
 $api = new \Rainedot\PhpNlMarket\MarketAPI('YOUR_API_KEY', 1);
 $api->giveForFree(1, 'USERNAME', 'item_code');
 ```
-
+    
 ## Callback
 
 ### Callback validation
@@ -95,6 +95,8 @@ $api->giveForFree(1, 'USERNAME', 'item_code');
 ```php
 $api = new \Rainedot\PhpNlMarket\MarketAPI('YOUR_API_KEY', 1);
 $api->validateRequest(array $request); // Returns true if request is valid
+```
+
 ```
 
 

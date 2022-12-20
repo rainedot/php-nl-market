@@ -136,6 +136,6 @@ class MarketAPI
             'username' => $username,
             'code' => $item_code,
         ];
-        $this->makeRequest('giveItem', $request);
+        $this->makeRequest('give-for-free', $request);
     }
 }
