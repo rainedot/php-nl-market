@@ -45,7 +45,7 @@ class MarketAPI
     /**
      * @throws \Exception
      */
-    public function makeRequest(string $method, array $request): array
+    protected function makeRequest(string $method, array $request): array
     {
         // make curl request
         $curl = curl_init();
