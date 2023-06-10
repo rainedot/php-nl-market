@@ -45,7 +45,7 @@ class MarketAPI
     /**
      * @throws \Exception
      */
-    protected function makeRequest(string $method, array $request): array
+    public function makeRequest(string $method, array $request): array
     {
         // make curl request
         $curl = curl_init();
@@ -56,7 +56,7 @@ class MarketAPI
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json',
         ));
-        $request[ 'user_id' ] = $this->user_id;
+        $request [ 'user_id' ] = $this->user_id;
         $request[ 'signature' ] = $this->makeSignature($request);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($request));
         $response = json_decode(curl_exec($curl), true);
@@ -71,9 +71,9 @@ class MarketAPI
     /**
      * @throws \Exception
      */
-    public function getBalance(): int
+    public function getBalance(): float
     {
-        return $this->makeRequest('get-balance', [])[ 'balance' ];
+        return $this->makeRequest('get-balance', ['user_id' => 66197])[ 'balance' ];
     }
 
     /**
@@ -102,7 +102,7 @@ class MarketAPI
     /**
      * @throws \Exception
      */
-    public function giftProduct(int $transaction_id, string $username, Product $product, Count $count): void
+    public function giftProduct(int $transaction_id, string $username, Product $product, Count $count): array
     {
         $request = [
             'id' => $transaction_id,
@@ -110,32 +110,32 @@ class MarketAPI
             'username' => $username,
             'cnt' => $count->value,
         ];
-        $this->makeRequest('gift-product', $request);
+        return $this->makeRequest('gift-product', $request);
     }
 
     /**
      * @throws \Exception
      */
-    public function transferBalance(int $transaction_id, string $username, float $amount): void
+    public function transferBalance(int $transaction_id, string $username, float $amount): array
     {
         $request = [
             'id' => $transaction_id,
             'username' => $username,
             'amount' => $amount
         ];
-        $this->makeRequest('transfer-money', $request);
+        return $this->makeRequest('transfer-money', $request);
     }
 
     /**
      * @throws \Exception
      */
-    public function giveForFree(int $transaction_id, string $username, string $item_code): void
+    public function giveForFree(int $transaction_id, string $username, string $item_code): array
     {
         $request = [
             'id' => $transaction_id,
             'username' => $username,
             'code' => $item_code,
         ];
-        $this->makeRequest('give-for-free', $request);
+        return $this->makeRequest('give-for-free', $request);
     }
 }
