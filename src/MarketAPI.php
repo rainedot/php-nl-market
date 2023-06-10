@@ -56,7 +56,7 @@ class MarketAPI
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json',
         ));
-        $request [ 'user_id' ] = $this->user_id;
+        $request[ 'user_id' ] = $this->user_id;
         $request[ 'signature' ] = $this->makeSignature($request);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($request));
         $response = json_decode(curl_exec($curl), true);
